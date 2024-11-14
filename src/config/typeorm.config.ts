@@ -32,6 +32,6 @@ export const typeormConfig: TypeOrmModuleOptions = {
   username: "postgres",
   password: "admin",
   database: "NestJs_practice",
-  entities: [__dirname + "/../**/*.entity{.ts, .js}"],
+  entities: [__dirname + "/../**/*.entity{.ts,.js}"],
   synchronize: true
 }

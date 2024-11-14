@@ -5,12 +5,11 @@ import { catsController } from './modules/cats/cats.controller';
 import { catService } from './modules/cats/cats.service';
 import { DogsController } from './modules/dogs/dogs.controller';
 import { DogsService } from './modules/dogs/dogs.service';
-import { QuizModule } from './modules/quiz/quiz.module';
+import { QuizModule } from './features/quiz/quiz.module';
 // import { TypeOrmModule } from './infrastructure/database/type-orm';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeormConfig } from './config/typeorm.config';
-// import { typeormConfig } from './config/typeorm.config';
 
 @Module({
   imports: [
