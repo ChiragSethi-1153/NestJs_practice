@@ -1,9 +1,12 @@
-import { Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('questions')
 export class Questions {
-  @PrimaryColumn({
-    unique: true
+  @PrimaryGeneratedColumn({
+    comment: "Unique Id"
   })
   id: Number;
+
+  @Column({type: 'varchar', nullable: false })
+  question: string
 }

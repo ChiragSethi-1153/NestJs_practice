@@ -2,8 +2,7 @@ import { BaseEntity, Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } fro
 
 @Entity('quizes')
 export class Quiz extends BaseEntity {
-  @PrimaryColumn({
-    unique: true,
+  @PrimaryGeneratedColumn({
     comment: 'Unique Identifier',
   })
   id: number;
