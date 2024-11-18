@@ -2,10 +2,11 @@ import { Body, Controller, Get, HttpCode, Post, UsePipes, ValidationPipe } from 
 import { QuestionService } from "./question.service";
 import { CreateQuestionDto } from "./createQuestion.dto";
 import { Questions } from "src/domain/question/question.entity";
+import { QuizService } from "../quiz/quiz.service";
 
 @Controller('questions')
 export class QuestionController {
-  constructor(private readonly questionService: QuestionService) {}
+  constructor(private readonly questionService: QuestionService, ) {}
 
   @Get('/')
   getAllQuestions(){

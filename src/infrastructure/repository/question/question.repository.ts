@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Questions } from 'src/domain/question/question.entity';
+import { Quiz } from 'src/domain/quiz/quiz.entity';
 import { CreateQuestionDto } from 'src/features/question/createQuestion.dto';
 import { DataSource, Repository } from 'typeorm';
 

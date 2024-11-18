@@ -19,5 +19,5 @@ export class Quiz extends BaseEntity {
   description: string;
 
   @OneToMany(() => Questions, (question) => question.id)
-  questionId: string
+  questions: Questions[]
 }
