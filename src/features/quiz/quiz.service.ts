@@ -11,10 +11,15 @@ export class QuizService {
   ) {}
 
   getAllQuiz() {
-    return this.repository.getAll();
+    return this.repository.listAll();
   }
 
-  createQuiz(quizData: CreateQuizDto) {
-  return this.repository.createNewQuiz(quizData);
+  getQuizById(id:number) {
+    return this.repository.getQuizById(id)
+  }
+
+
+  async createQuiz(quizData: CreateQuizDto) {
+  return await this.repository.createNewQuiz(quizData);
   }
 }

@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
-import { QuestionController } from './question.controller';
-import { QuestionService } from './question.service';
-import { QuestionRepository } from 'src/infrastructure/repository/question/question.repository';
+import { CreateQuestionModule } from './create-question/create-question.module';
+import { GetQuestionModule } from './get-question/get-question.module';
+import { ListQuestionModule } from './list-questions/list-questions.module';
 
 @Module({
-  controllers: [QuestionController],
-  providers: [QuestionService, QuestionRepository]
+  imports: [CreateQuestionModule, GetQuestionModule, ListQuestionModule]
 })
 export class QuestionModule {}

@@ -1,16 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { catsController } from './modules/cats/cats.controller';
-import { catService } from './modules/cats/cats.service';
-import { DogsController } from './modules/dogs/dogs.controller';
-import { DogsService } from './modules/dogs/dogs.service';
 import { QuizModule } from './features/quiz/quiz.module';
-// import { TypeOrmModule } from './infrastructure/database/type-orm';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeormConfig } from './config/typeorm.config';
 import { QuestionModule } from './features/question/question.module';
+import { OptionModule } from './features/option/option.module';
 
 @Module({
   imports: [
@@ -18,8 +14,9 @@ import { QuestionModule } from './features/question/question.module';
     TypeOrmModule.forRoot(typeormConfig),
     ConfigModule.forRoot({ isGlobal: true }),
     QuestionModule,
+    OptionModule
   ],
-  controllers: [AppController, catsController, DogsController],
-  providers: [AppService, catService, DogsService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
