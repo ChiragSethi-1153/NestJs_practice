@@ -33,5 +33,6 @@ export const typeormConfig: TypeOrmModuleOptions = {
   password: "admin",
   database: "NestJs_practice",
   entities: [__dirname + "/../**/*.entity{.ts,.js}"],
-  synchronize: true
+  synchronize: true,
+  logging: true,
 }

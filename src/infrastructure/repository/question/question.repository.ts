@@ -11,7 +11,7 @@ export class QuestionRepository extends Repository<Questions> {
   }
 
   async listQuestions() {
-    return await this.find();
+    return await this.find({relations: ['quiz', 'options']});
   }
 
   async findQuestion(id: number) {
@@ -24,6 +24,7 @@ export class QuestionRepository extends Repository<Questions> {
   }
 
   async updateQuestion(questionData: UpdateQuestionDto) {
+    console.log(questionData)
     return await this.save(questionData)
   }
 }

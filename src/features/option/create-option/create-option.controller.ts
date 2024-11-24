@@ -17,7 +17,7 @@ export class CreateOptionController {
   @Post('/')
   @HttpCode(200)
   @UsePipes(ValidationPipe)
-  async createOption(@Body() optionData: CreateOptionDto) {
+  async createOption(@Body() optionData: CreateOptionDto): Promise<Option> {
     return await this.OptionService.handle(optionData);
   }
 }

@@ -11,11 +11,11 @@ export class Questions {
 
   @Column({type: 'varchar', nullable: false })
   question: string
+  
+  @OneToMany(() => Option, (option) => option.question )
+  options: Option[]
 
   @ManyToOne(() => Quiz, (quiz) => quiz.questions )
   quiz: Quiz
-
-  @OneToMany(() => Option, (option) => option.question )
-  options: Option[]
 
 }

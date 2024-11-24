@@ -14,7 +14,7 @@ export class CreateOptionService {
     private readonly questionRepo: QuestionRepository,
   ) {}
 
-  async handle(OptionData: CreateOptionDto) {
+  async handle(OptionData: CreateOptionDto): Promise<Option> {
     const question = await this.questionRepo.findQuestion(
       OptionData.questionId,
     );
@@ -24,6 +24,7 @@ export class CreateOptionService {
     if (question) {
       question.options = [...question.options, newOption];
       await this.questionRepo.updateQuestion(question)
+      console.log("saved")
     }
 
     return newOption;
